@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="score">
+            <a href="score.html">View HighScores</a>
+        </div>
+        <div class="timer">Time: <span id="time"></span></div>
+    </header>
+
+    <main>
+        <div>
+            <section id="introSection" class="intro-section">
+                <div id="quiz">
+                    <h1>Coding Quiz Challenge</h1>
+                    <p id="instructions">
+                    Try to answer the following code-related questions within the time limit. Keep in mind that incorrect asnwers will penalize your score by ten seconds!
+                    </p>
+                    <button class="button" id="startBtn">Start Quiz</button>
+                </div>
+            </section>
+
+            <section class="questions" id="theQuestions">
+                <div>
+
+                <div>
+
+                <h2 id="displayQuestions"></h2>
+                
+                <ul>
+                    <li><button class="options" id="btnAnswer1" value="a"></button></li>
+                    <li><button class="options" id="btnAnswer2" value="b"></button></li>
+                    <li><button class="options" id="btnAnswer3" value="c"></button></li>
+                    <li><button class="options" id="btnAnswer4" value="d"></button></li>
+                </ul>
+                <div>
+                    <div id="feedback">
+                        <p></p>
+                    </div>
+            </section>
+
+            <section class="initials-submit" id="initials-submit">
+                <div>
+                    <h2 id="done">All done!</h2>
+                    <p id="final-score">Your final score is:</p>
+                    <p>Enter Initials:
+                        <input id="your-initials">
+                        <button type="button" class="finish-button" id="score">Add</button>
+                    </p>
+                </div>
+            </section>
+
+            <section class="scores" id="theScore">
+                 <div>
+                    <h2>High Scores</h2>
+                    <div id="highScoreList">
+                        <p>Your record</p>
+                    </div>
+                    <button class="button-gb" id="go-back">Go back</button>
+                    <button class="button-gb" id="clear-hs">Clear Highscores</button>
+                 </div>
+            </section>
+        </div>
+    </main>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
