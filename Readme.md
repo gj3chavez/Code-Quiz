@@ -12,6 +12,11 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 
+## Screenshots
+![Code Quiz](./assets/img/Screenshot%20-1.png)
+![Code Quiz](./assets/img/Screenshot%20-2.png),
+
+
 ## Technologies
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)

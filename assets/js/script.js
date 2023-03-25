@@ -73,7 +73,7 @@ function startQuiz(){
 
 let timeEl = document.getElementById('time');
 
-let secondsLeft = 5;
+let secondsLeft = 30;
 let questionCount = 0;
 let currentQuestion = 1;
 let theScore = 0
