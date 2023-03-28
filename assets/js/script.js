@@ -82,7 +82,7 @@ function startQuiz(){
 
 let timeEl = document.getElementById('time');
 
-let secondsLeft = 30;
+let secondsLeft = 40;
 let questionCount = 0;
 let currentQuestion = 1;
 let theScore = 0
@@ -135,7 +135,7 @@ function checkAnswer(userAnswer){
              score = score + 1;
     }
     else {
-    secondsLeft = secondsLeft - 20;
+    secondsLeft = secondsLeft - 10;
         feedbackEl.textContent = "Wrong!";
     
     }
