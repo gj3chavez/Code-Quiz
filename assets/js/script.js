@@ -18,12 +18,14 @@ let allDone = document.getElementById('done');
 let finalScore = document.getElementById('final-score');
 let initialsEl = document.getElementById('your-initials');
 let submitScore = document.getElementById('score');
-let highScore = document.getElementById('theScores');
+let highscores = document.getElementById('highscores');
 let listScores = document.getElementById('highScoreList');
 
 let goBackButton = document.getElementById('go-back');
 let clearHsButton = document.getElementById('clear-hs');
 let finishButton = document.querySelector('#score');
+let scoresSection = document.getElementById('scoresSection');
+let score = 0
 
 let questions = [
     {
@@ -55,12 +57,19 @@ let questions = [
 ]
 
 
+questionsSection.style.display = 'none';
 startBtnEl.addEventListener('click', startQuiz)
 answer1El.addEventListener('click', (e) => checkAnswer(e.target.value));
 answer2El.addEventListener('click', (e) => checkAnswer(e.target.value));
 answer3El.addEventListener('click', (e) => checkAnswer(e.target.value));
 answer4El.addEventListener('click', (e) => checkAnswer(e.target.value));
 finishButton.addEventListener('click', showScore);
+highscores.addEventListener('click', displayScores);
+clearHsButton.addEventListener('click', () => {
+    localStorage.removeItem('scoreList');
+    listScores.innerHTML = '';
+});
+goBackButton.addEventListener('click', () => location.reload());
 
 function startQuiz(){
     introSection.style.display ='none';
@@ -115,16 +124,15 @@ function displayQuestion (){
 
 
 function checkAnswer(userAnswer){
-    console.log('checkAnswer is being called...')
     feedbackEl.style.display = 'block';
     setTimeout(function(){
         feedbackEl.style.display = 'none';
     }, 1000);
 
-    if (questions[questionCount].answer == userAnswer) {
+    if (questions[questionCount].correctAnswer == userAnswer) {
         
             feedbackEl.textContent = "Correct!";
-             theScore = theScore + 1;
+             score = score + 1;
     }
     else {
     secondsLeft = secondsLeft - 20;
@@ -145,29 +153,35 @@ function checkAnswer(userAnswer){
     function endQuiz(){
         questionsSection.style.display ='none';
         initialsSeciton.style.display ='block';
-        finalScore.textContent = 'Your final score is :' + theScore;
+        finalScore.textContent = 'Your final score is :' + score;
         timeEl.style.display = 'none';
     };
 
 
-    function score(){
-        let scoreList = localStorage.getItem('ScoreList');
-        if (scoreList !== null){
-            cleanList = JSON.parse(scoreList);
-            return cleanList;
-        }else{
-            cleanList = [];
-        }
-        return cleanList;
+    function addScore(initials){
+        let scoreList = JSON.parse(localStorage.getItem('scoreList')) || [];
+       scoreList.push({
+        score,
+        initials
+       })
+       localStorage.setItem('scoreList', JSON.stringify(scoreList))
     };
 
 
     function showScore(){
         let initials = initialsEl.value;
-        console.log('initials', initials)
-        // scoreData.innerHTML = '';
-        // scoreData.style.display = 'block';
-        // let highScore = results();
-
-        // let 
+        addScore(initials)
     }
+
+function displayScores() {
+    initialsSeciton.style.display = 'none';
+    scoresSection.style.display = 'block';
+
+    let scoreList = JSON.parse(localStorage.getItem('scoreList')) || [];
+
+    scoreList.forEach(record => {
+        let li = document.createElement('li');
+        li.innerHTML = `${record.initials}: ${record.score}`;
+        listScores.appendChild(li);
+    })
+}

@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="score">
-            <a href="score.html">View HighScores</a>
+            <button id="highscores" >Highscores</button> 
         </div>
         <div class="timer">Time: <span id="time"></span></div>
     </header>
@@ -59,12 +59,13 @@
                 </div>
             </section>
 
-            <section class="scores" id="theScore">
+            <section class="scores" id="scoresSection">
                  <div>
                     <h2>High Scores</h2>
-                    <div id="highScoreList">
+                    <div >
                         <p>Your record</p>
                     </div>
+                    <ul id="highScoreList"></ul>
                     <button class="button-gb" id="go-back">Go back</button>
                     <button class="button-gb" id="clear-hs">Clear Highscores</button>
                  </div>
