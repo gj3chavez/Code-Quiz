@@ -13,7 +13,7 @@ let answer4El = document.getElementById('btnAnswer4');
 
 let feedbackEl = document.getElementById('feedback');
 
-let initialsSeciton = document.getElementById('initials-submit');
+let initialsSection = document.getElementById('initials-submit');
 let allDone = document.getElementById('done');
 let finalScore = document.getElementById('final-score');
 let initialsEl = document.getElementById('your-initials');
@@ -152,7 +152,7 @@ function checkAnswer(userAnswer){
 
     function endQuiz(){
         questionsSection.style.display ='none';
-        initialsSeciton.style.display ='block';
+        initialsSection.style.display ='block';
         finalScore.textContent = 'Your final score is :' + score;
         timeEl.style.display = 'none';
     };
@@ -174,7 +174,7 @@ function checkAnswer(userAnswer){
     }
 
 function displayScores() {
-    initialsSeciton.style.display = 'none';
+    initialsSection.style.display = 'none';
     scoresSection.style.display = 'block';
 
     let scoreList = JSON.parse(localStorage.getItem('scoreList')) || [];
