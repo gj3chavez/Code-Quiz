@@ -26,7 +26,7 @@ let clearHsButton = document.getElementById('clear-hs');
 let finishButton = document.querySelector('#score');
 let scoresSection = document.getElementById('scoresSection');
 let score = 0
-
+// test
 let questions = [
     {
         question: "Commonly used data types DO NOT Include:",
