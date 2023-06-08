@@ -13,8 +13,8 @@ WHEN the game is over
 THEN I can save my initials and my score
 
 ## Screenshots
-![Code Quiz](./assets/img/Screenshot%20-1.png)
-![Code Quiz](./assets/img/Screenshot%20-2.png),
+![Code Quiz](./assets/img/codingq1.png)
+![Code Quiz](./assets/img/codingq2.png),
 
 
 ## Technologies
